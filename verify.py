@@ -23,7 +23,7 @@ def main(
             f"[Error] {exc.__class__.__name__}: {exc}",
             fg=typer.colors.RED,
         )
-        typer.Exit(1)
+        raise typer.Exit(1)
     else:
         typer.secho(
             f"JWT Payload: {pprint.pformat(payload, indent=4)}",
